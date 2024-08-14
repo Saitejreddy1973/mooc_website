@@ -1,0 +1,200 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 14, 2024 at 06:55 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mooc_website`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certificates`
+--
+
+CREATE TABLE `certificates` (
+  `registration_number` varchar(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `course_code` varchar(50) DEFAULT NULL,
+  `course_name` varchar(100) DEFAULT NULL,
+  `course_duration` varchar(50) DEFAULT NULL,
+  `marks` int(11) DEFAULT NULL,
+  `certificate_path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `course_code` varchar(50) NOT NULL,
+  `course_name` varchar(100) DEFAULT NULL,
+  `course_duration` varchar(50) DEFAULT NULL,
+  `course_link` varchar(255) DEFAULT NULL,
+  `course_category` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registrations`
+--
+
+CREATE TABLE `registrations` (
+  `registration_number` varchar(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `course_code` varchar(50) DEFAULT NULL,
+  `course_name` varchar(100) DEFAULT NULL,
+  `course_duration` varchar(50) DEFAULT NULL,
+  `course_link` varchar(255) DEFAULT NULL,
+  `course_category` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `registration_number` varchar(50) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `section` varchar(10) DEFAULT NULL,
+  `slot` varchar(10) DEFAULT NULL,
+  `registered_email` varchar(100) DEFAULT NULL,
+  `official_email` varchar(100) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `bank_account_number` varchar(20) DEFAULT NULL,
+  `ifsc_code` varchar(20) DEFAULT NULL,
+  `fa_name` varchar(100) DEFAULT NULL,
+  `credits_earned` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`registration_number`, `name`, `section`, `slot`, `registered_email`, `official_email`, `phone_number`, `bank_account_number`, `ifsc_code`, `fa_name`, `credits_earned`) VALUES
+('99210041020', 'BUSIREDDY MARIYA BHARGAV REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041026', 'CHENNAMA CHARANKESAVAREDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004103', 'BOMMINENI SREEKAR CHOWDARY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041033', 'DEVANA NAVEEN BABU', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041037', 'GARAGA RAMCHARAN SAI TEJA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004111', 'BUSANABOYINA SURYA NAGENDRA PRATHAP', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004116', 'CHADIPIRALLA PAVAN KUMAR REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041172', 'DASARI GOVARDHAN REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041175', 'DEEKSHITH N', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041177', 'DUBBA SAITEJ REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004118', 'CHAKALA RAVIRAM', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041333', 'DEVI REDDY GOVARDHAN REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041334', 'DEVIREDDY VAMSI KRISHNA  REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041389', 'GENUPULA ABHINAYA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041391', 'GUDIPATI SAI KIRAN', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041426', 'GRANDHE. LAKSHMI HARSHITHA', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004143', 'CHINNAPUREDDY GANGA CHAITHANYA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041458', 'ELURI.HARSHA VARDHINI ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041459', 'GANGIREDDY VENKATA AJAY KUMAR REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004148', 'CHIRAMANA AKHILESH REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041522', 'AKSHAY REDDY CHALLA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041534', 'GOLLAPALLI SRI VENKATA NAGA MANI TEJA', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041535', 'GONUGUNTLA PRANEETH NAIDU', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041569', 'KORIVI MAHESWAR REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004164', 'DAYINA SANDEEP ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004167', 'DEVALLA GURUKIRAN ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041693', 'CHAVA YOGITHA', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004173', 'DHATHRI BATHINEEDI ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041738', 'CHAKALI NAVEEN ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041742', 'DUDEKULA NAJIR BASHA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041767', 'GOLLERU SASANK BABU ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041784', 'BOOBAL A', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210041787', 'GUNNAM DUSHYANTH', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004186', 'DUDEKULA ABEED SALMAN', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004187', 'DUDEKULA FAYAZ BASHA', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004189', 'DUDEKULA SANA HOMERA', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004197', 'ELLURU BHARATH SIMHA REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004202', 'GADDEY ANIRUDH', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004206', 'GAJJALA MALLAPPA GARI BHARATH KUMAR REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004207', 'GAJULAPALLI SAI KIRAN ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210042076', 'R.SESHU VARDHAN REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('99210042078', 'SAGILE SURYA PRAKASH REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004208', 'GALAM GOPIRAJU ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004209', 'GALI BHARATH TEJA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004215', 'GANNE VAISHNAVI ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004216', 'GARAGA KARTHI KEYA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004235', 'GORLA BUCHAYYAGARI SUMANTH', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004238', 'GOURISHETTI ROHITH ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004253', 'GURRAM ADITHYA ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004802', 'GOSU NEERAJ YADAV ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004803', 'GUBBA V SESHA SAI KRISHNA VINEETH', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004849', 'CHELURI ASHOK KUMAR REDDY ', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004859', 'DIVI MANOJ KUMAR', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('9921004873', 'GUDALA GUNA SANKAR REDDY', 'S2', 'Slot 01', '2021-2025', 'CSEUG', '', 'D SURENDRIAN MUTHUKU', '', 'D SURENDRIAN MUTHUKUMAR', 0),
+('registration_number', 'name', 'section', 'slot', 'registered_email', 'official_email', 'phone_number', 'bank_account_number', 'ifsc_code', 'fa_name', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('student','fa','admin') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `certificates`
+--
+ALTER TABLE `certificates`
+  ADD PRIMARY KEY (`registration_number`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_code`);
+
+--
+-- Indexes for table `registrations`
+--
+ALTER TABLE `registrations`
+  ADD PRIMARY KEY (`registration_number`);
+
+--
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`registration_number`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

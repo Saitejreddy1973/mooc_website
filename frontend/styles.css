@@ -1,0 +1,19 @@
+body {
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.text-center {
+    margin-bottom: 20px;
+}
+
+.btn-block {
+    margin-top: 20px;
+}
+.list-group-item {
+    cursor: pointer;
+}
